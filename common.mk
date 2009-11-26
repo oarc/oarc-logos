@@ -9,13 +9,7 @@ all : $(SVG) $(PNG) $(JPG) $(GIF) $(BMP)
 %.png : %.svg
 	inkscape -e $@ $<
 
-%.jpg : %.png
-	convert $< $@
-
-%.gif : %.png
-	convert $< $@
-
-%.bmp : %.png
+%.jpg %.gif %.bmp : %.png
 	convert $< $@
 
 clean :
