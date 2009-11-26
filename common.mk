@@ -1,3 +1,11 @@
+SVG = $(wildcard *.svg)
+PNG = $(SVG:.svg=.png)
+JPG = $(SVG:.svg=.jpg)
+GIF = $(SVG:.svg=.gif)
+BMP = $(SVG:.svg=.bmp)
+
+all : $(SVG) $(PNG) $(JPG) $(GIF) $(BMP)
+
 %.png : %.svg
 	inkscape -e $@ $<
 
@@ -11,7 +19,7 @@
 	convert $< $@
 
 clean :
-	rm -f *.png *.jpg *.gif *.bmp
+	rm -f $(PNG) $(JPG) $(GIF) $(BMP)
 
 .PRECIOUS : %.png
 
