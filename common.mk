@@ -4,12 +4,18 @@ JPG = $(SVG:.svg=.jpg)
 GIF = $(SVG:.svg=.gif)
 BMP = $(SVG:.svg=.bmp)
 
-all : $(SVG) $(PNG) $(JPG) $(GIF) $(BMP)
+all : $(PNG) $(JPG) $(GIF) $(BMP)
 
 %.png : %.svg
 	inkscape -e $@ $<
 
-%.jpg %.gif %.bmp : %.png
+%.jpg : %.png
+	convert $< $@
+
+%.gif : %.png
+	convert $< $@
+
+%.bmp : %.png
 	convert $< $@
 
 clean :
