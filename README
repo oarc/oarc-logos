@@ -1,0 +1,15 @@
+These logos were drawn in Scalable Vector Graphics (SVG) format
+[http://w3.org/Graphics/SVG] for RAC by Tyler Tidman, VA3DGN.
+
+Inspiration for these logos was provided by the SVG version of the
+ARRL ARES logo posted on Wikipedia
+[http://en.wikipedia.org/wiki/File:ARES_Color_Logo.svg].
+
+Software used:
+  - Inkscape [http://inkscape.org] (0.46)
+  - Imagemagick [http://imagemagick.org] (6.3.7)
+  - GNU Make [http://gnu.org/software/make] (3.81)
+  - Debian Linux [http://debian.org] (5.0 Lenny/Stable)
+
+Type "make" to magically generate all .png, .jpg, .gif and .bmp versions
+from the source .svg files.
