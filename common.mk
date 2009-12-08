@@ -7,19 +7,22 @@ BMP = $(SVG:.svg=.bmp)
 all : $(PNG) $(JPG) $(GIF) $(BMP)
 
 %.png : %.svg
-	inkscape -e $@ $<
+	@inkscape -e $@ $<
+
+%.thumb.png : %.png
+	@convert -size 125x125 -resize 125x125 $< $@
 
 %.jpg : %.png
-	convert $< $@
+	@convert $< $@
 
 %.gif : %.png
-	convert $< $@
+	@convert $< $@
 
 %.bmp : %.png
-	convert $< $@
+	@convert $< $@
 
 clean :
-	rm -f $(PNG) $(JPG) $(GIF) $(BMP)
+	@rm -f $(PNG) $(JPG) $(GIF) $(BMP)
 
 .PRECIOUS : %.png
 
