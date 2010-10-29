@@ -1,9 +1,12 @@
+SHELL = /bin/bash
+
 SVG = $(wildcard *.svg)
 PNG = $(SVG:.svg=.png)
 JPG = $(SVG:.svg=.jpg)
 GIF = $(SVG:.svg=.gif)
 BMP = $(SVG:.svg=.bmp)
 
+.PHONY : all
 all : $(PNG) $(JPG) $(GIF) $(BMP)
 
 %.png : %.svg
@@ -21,9 +24,8 @@ all : $(PNG) $(JPG) $(GIF) $(BMP)
 %.bmp : %.png
 	@convert $< $@
 
+.PHONY : clean
 clean :
 	@rm -f $(PNG) $(JPG) $(GIF) $(BMP)
 
 .PRECIOUS : %.png
-
-.PHONY : all clean
