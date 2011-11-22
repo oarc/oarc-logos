@@ -11,5 +11,5 @@ Software used:
   - GNU Make [http://gnu.org/software/make] (3.81)
   - Debian Linux [http://debian.org] (5.0 Lenny/Stable)
 
-Type "make" to magically generate all .png, .jpg, .gif and .bmp versions
+Type "make" to magically generate all .png, .jpg, and .gif versions
 from the source .svg files.

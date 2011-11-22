@@ -4,10 +4,9 @@ SVG = $(wildcard *.svg)
 PNG = $(SVG:.svg=.png)
 JPG = $(SVG:.svg=.jpg)
 GIF = $(SVG:.svg=.gif)
-BMP = $(SVG:.svg=.bmp)
 
 .PHONY : all
-all : $(PNG) $(JPG) $(GIF) $(BMP)
+all : $(PNG) $(JPG) $(GIF)
 
 %.png : %.svg
 	@inkscape -e $@ $<
@@ -21,11 +20,8 @@ all : $(PNG) $(JPG) $(GIF) $(BMP)
 %.gif : %.png
 	@convert $< $@
 
-%.bmp : %.png
-	@convert $< $@
-
 .PHONY : clean
 clean :
-	@rm -f $(PNG) $(JPG) $(GIF) $(BMP)
+	@rm -f $(PNG) $(JPG) $(GIF)
 
 .PRECIOUS : %.png
