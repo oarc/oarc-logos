@@ -3,10 +3,11 @@ SHELL = /bin/bash
 SVG = $(wildcard *.svg)
 PNG = $(SVG:.svg=.png)
 JPG = $(SVG:.svg=.jpg)
-GIF = $(SVG:.svg=.gif)
+
+GENERATED_FILES = $(PNG) $(JPG)
 
 .PHONY : all
-all : $(PNG) $(JPG) $(GIF)
+all : $(GENERATED_FILES)
 
 %.png : %.svg
 	@inkscape -e $@ $<
@@ -17,11 +18,8 @@ all : $(PNG) $(JPG) $(GIF)
 %.jpg : %.png
 	@convert $< $@
 
-%.gif : %.png
-	@convert $< $@
-
 .PHONY : clean
 clean :
-	@rm -f $(PNG) $(JPG) $(GIF)
+	@rm -f $(GENERATED_FILES)
 
 .PRECIOUS : %.png
