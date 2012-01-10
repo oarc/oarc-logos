@@ -2,9 +2,10 @@ SHELL = /bin/bash
 
 SVG = $(wildcard *.svg)
 PNG = $(SVG:.svg=.png)
+THUMB = $(SVG:.svg=.thumb.png)
 JPG = $(SVG:.svg=.jpg)
 
-GENERATED_FILES = $(PNG) $(JPG)
+GENERATED_FILES = $(PNG) $(THUMB) $(JPG)
 
 .PHONY : all
 all : $(GENERATED_FILES)
