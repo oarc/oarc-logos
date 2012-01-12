@@ -4,9 +4,10 @@ SVG = $(wildcard *.svg)
 PNG = $(SVG:.svg=.png)
 THUMB = $(SVG:.svg=.thumb.png)
 PDF = $(SVG:.svg=.pdf)
+GIF = $(SVG:.svg=.gif)
 JPG = $(SVG:.svg=.jpg)
 
-GENERATED_FILES = $(PNG) $(THUMB) $(PDF) $(JPG)
+GENERATED_FILES = $(PNG) $(THUMB) $(PDF) $(GIF) $(JPG)
 
 .PHONY : all
 all : $(GENERATED_FILES)
@@ -20,6 +21,9 @@ thumb : $(THUMB)
 .PHONY : pdf
 pdf : $(PDF)
 
+.PHONY : gif
+gif : $(JPG)
+
 .PHONY : jpg
 jpg : $(JPG)
 
@@ -31,6 +35,9 @@ jpg : $(JPG)
 
 %.pdf : %.svg
 	@inkscape -A $@ $<
+
+%.gif : %.png
+	@convert $< $@
 
 %.jpg : %.png
 	@convert $< $@
