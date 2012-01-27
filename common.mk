@@ -27,6 +27,7 @@ gif : $(JPG)
 .PHONY : jpg
 jpg : $(JPG)
 
+.PRECIOUS : %.png
 %.png : %.svg
 	@inkscape -e $@ $<
 
@@ -45,5 +46,3 @@ jpg : $(JPG)
 .PHONY : clean
 clean :
 	@rm -f $(GENERATED_FILES)
-
-.PRECIOUS : %.png
