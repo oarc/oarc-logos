@@ -35,7 +35,7 @@ jpg : $(JPG)
 	@convert -size 125x125 -resize 125x125 $< $@
 
 %.pdf : %.svg
-	@inkscape -A $@ $<
+	@inkscape -T -A $@ $<
 
 %.gif : %.png
 	@convert $< $@
