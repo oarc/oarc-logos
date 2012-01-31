@@ -27,12 +27,11 @@ gif : $(JPG)
 .PHONY : jpg
 jpg : $(JPG)
 
-.PRECIOUS : %.png
 %.png : %.svg
 	@inkscape -e $@ $<
 
-%.thumb.png : %.png
-	@convert -size 125x125 -resize 125x125 $< $@
+%.thumb.png : %.svg
+	@inkscape -w125 -h125 -e $@ $<
 
 %.pdf : %.svg
 	@inkscape -T -A $@ $<
