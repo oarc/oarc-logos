@@ -1,3 +1,3 @@
 TOP = .
 
-include $(TOP)/common.mk
+include $(TOP)/logo.mk
