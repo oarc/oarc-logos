@@ -30,8 +30,11 @@ jpg : $(JPG)
 %.png : %.svg
 	@inkscape -e $@ $<
 
-%.thumb.png : %.svg
-	@inkscape -w125 -h125 -e $@ $<
+#%.thumb.png : %.svg
+	#@inkscape -w125 -h125 -e $@ $<
+
+%.thumb.png : %.png
+	@convert -size 125x125 -resize 125x125 $< $@
 
 %.pdf : %.svg
 	@inkscape -T -A $@ $<
