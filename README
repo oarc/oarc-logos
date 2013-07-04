@@ -1,4 +1,4 @@
-These logos were drawn in Scalable Vector Graphics (SVG) format [2] for RAC by
+These logos were drawn in Scalable Vector Graphics (SVG) format [2] for OARC by
 Tyler Tidman VA3DGN.  Wherever possible, the Portable Network Graphics (PNG)
 format [3] is now being used for all auto-generated bitmaps.  The chosen
 fonts, "DejaVu Sans Bold", "DejaVu Sans", "DejaVu Sans Bold Condensed" and
@@ -6,16 +6,14 @@ fonts, "DejaVu Sans Bold", "DejaVu Sans", "DejaVu Sans Bold Condensed" and
 
 Software that was used to create and work with these files:
   - GNU Make (3.81) [5]
-  - Inkscape (0.46, 0.47) [6]
+  - Inkscape (0.46, 0.47, 0.48) [6]
   - Imagemagick (6.3.7, 6.6.0-4) [7]
-  - Debian Linux "Squeeze/Stable" (6.0.3, 6.0.4) [8]
+  - Debian Linux "Squeeze" and "Wheezy" (6.0, 7.0) [8]
 
-Type "make" to magically generate all bitmap versions from the source .svg
+Type "make" to magically generate bitmap versions from the source vector .svg
 files.
 
 References:
-[0]http://rac.ca/en/rac/services/logos
-[1]http://en.wikipedia.org/wiki/File:ARES_Color_Logo.svg
 [2]http://w3.org/Graphics/SVG
 [3]http://libpng.org/pub/png
 [4]http://dejavu-fonts.org
