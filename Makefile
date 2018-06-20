@@ -24,7 +24,7 @@ pdf: $(PDF)
 jpg: $(JPG)
 
 %.png: %.svg
-	@inkscape -e $@ $<
+	@inkscape --export-png=$@ $<
 
 #%.thumb.png: %.svg
 	#@inkscape -w125 -h125 -e $@ $<
@@ -33,7 +33,7 @@ jpg: $(JPG)
 	@convert -size 125x125 -resize 125x125 $< $@
 
 %.pdf: %.svg
-	@inkscape -T -A $@ $<
+	@inkscape --export-text-to-path --export-pdf=$@ $<
 
 %.jpg: %.png
 	@convert $< $@
